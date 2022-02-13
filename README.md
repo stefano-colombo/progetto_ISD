@@ -20,7 +20,7 @@ docker run -it  --rm -p 4002:3306 --name db \
 -e MYSQL_USER=stefano -e MYSQL_PASSWORD=ste \
 mariadb
 
-## conmando per il container rabbitmq definito nel file docker-compose.yml
+## comando per il container rabbitmq definito nel file docker-compose.yml
 docker-compose up
 
 version: '3'  
@@ -33,7 +33,7 @@ services:
       - '15672:15672'   # HTTP management UI (guest:guest)
 
 
-## creazione e esecuzione container spring boot(serve una guida perchè non è tutto immediato)
+## creazione e esecuzione dei container per eseguire l'app spring boot
 Per creare il container che possa far eseguire l'app spring boot prima bisogna creare un immaggine "base".
 
 con il Dockerfile sottostante usiamo il comando: docker build . -t base_ubuntu
