@@ -1,4 +1,4 @@
-# progetto_ISD
+# Progetto_ISD
 ## Chat asincrona springboot+thymeleaf+mariadb+rabbitmq
 il progetto presenta 4 container in tutto, 1 container rabbitmq, 1 container maradb e 2 container ubuntu configurati per eseguire un'applicazione springboot.
 
