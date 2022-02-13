@@ -1,5 +1,5 @@
 # progetto_ISD
-## Chat asincrona spring boot+thymeleaf+mariadb+rabbitmq.
+## Chat asincrona springboot+thymeleaf+mariadb+rabbitmq
 il progetto presenta 4 container in tutto, 1 container rabbitmq, 1 container maradb e 2 container ubuntu configurati per eseguire un'applicazione springboot.
 
 I dati relativi alla chat vengono memorizzati sul database mariadb. Se ad essere inviato è un messaggio, viene memoriazzato il testo, invece se si tratta di un file, viene memorizzato il nome, l'estensione e il link che viene utlizzato dall'interfaccia thymeleaf per permettere il download dei file, in entrambi i casi viene memorizzato il mittente e il tipo di messaggio (file o messagio). I dati vengono memorizzati una volta che il messaggio arriva a destinazione, non prima.
