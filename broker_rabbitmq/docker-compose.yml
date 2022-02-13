@@ -1,0 +1,10 @@
+version: '3'  # requires Docker Compose 1.13 or later
+
+services:
+  rabbitmq:
+    # This variant is built on Alpine Linux (it's smaller) and includes
+    # the management UI.
+    image: 'rabbitmq:management-alpine'
+    ports:
+      - '5672:5672'     # The standard AMQP protocol port
+      - '15672:15672'   # HTTP management UI (guest:guest)
