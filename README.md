@@ -13,6 +13,10 @@ Questa è la struttura del progetto,i due container utilizzano le code fornite d
 
 Questa è l'interfaccia che permette di fornire thymeleaf, un'interfaccia abbastanza semplice dove a sinistra abbiamo la possibilità di inviare messaggi o file e a destra abbiamo lo storico della chat, i file che vengono inviati danno la possibilità di essere scaricati sul proprio host cliccando sul loro nome.
 
+![alt_text](https://github.com/stefano-colombo/progetto_ISD/blob/main/immagini/struttura_app.png)
+
+Questa è la struttura dell'app creata con spring tool suite 4
+
 ## comando per il container mariadb
 docker run -it  --rm -p 4002:3306 --name db \
 --mount type=bind,src=/cartella_sul_pc,dst=/var/lib/mysql \
