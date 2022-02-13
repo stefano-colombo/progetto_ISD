@@ -5,7 +5,10 @@ il progetto presenta 4 container in tutto, 1 container rabbitmq, 1 container mar
 I dati relativi alla chat vengono memorizzati sul database mariadb, dove se si tratta di un messaggio, viene memoriazzato il testo, invece se si tratta di un file, viene memorizzato il nome, l'estensione e il link che viene utlizzato dall'interfaccia thymeleaf per fare il download dei file, in entrambi i casi viene memorizzato il mittente e il tipo di messaggio (file o messagio). i dati vengono memorizzati una volta che il messaggio arriva a destinazione non prima.
 
 
-![alt text]
+![alt text](https://github.com/stefano-colombo/progetto_ISD/blob/main/immagini/struttura_progetto.png)
+
+questa è la struttura del progetto,i due container utilizzano le code fornite dal broker dei messaggi per comunicare, i messaggi come scritto sopra vengono memorizzati in un database mariadb che ha la cartella /var/lib/mysql mappata con una cartella all'interno dell'host così da non perdere i dati una volta che il container viene distrutto o riavviato, i file ricevuti dalla comunicazione tra i due container spring boot vengono memorizzatinella cartella download dentro il container che viene mappata con una cartella nell'host così da verificare l'effettiva ricezioni dei file.
+
 
 
 ## comando per il container mariadb
