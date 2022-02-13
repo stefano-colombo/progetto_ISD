@@ -1,0 +1,4 @@
+FROM parte_base_openjdk
+COPY progetto.jar /
+CMD ["java","-jar","progetto.jar"]
+
