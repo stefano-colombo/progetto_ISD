@@ -85,7 +85,7 @@ docker run -it --rm -p 8081:8080  \
 il mount server per vedere se i file vengono effettivamente ricevuti dal container,la prima coppia di variabili d'ambiente serve per indicare quale ruoto si ha nella chat e la seconda coppia invece serve per indicare i nomi delle code rabbitmq.
 
 
-## ALTRI utili utilizzati:
+## ALTRI comandi utili utilizzati:
 
 #comando per trovare l'ip dei container
 docker inspect db | grep IPAddress\":
