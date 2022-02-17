@@ -58,7 +58,7 @@ con il Dockerifle sottostante creiamo l'immagine del container che ci interessa:
 progetto.jar è il file ottentuto dopo il comando "mvn clean package" nella cartella target del progetto spring boot.
 
 
-FROM parte_base_openjdk   
+FROM base_openjdk   
 COPY progetto.jar /  
 CMD ["java","-jar","progetto.jar"]     
 
