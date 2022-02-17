@@ -42,11 +42,11 @@ Per creare il container che possa far eseguire l'app spring boot prima bisogna c
 
 con il Dockerfile sottostante usiamo il comando: docker build . -t base_ubuntu
 
-FROM ubuntu:latest
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN mkdir /home/download
-RUN mkdir /home/upload
+FROM ubuntu:latest   
+RUN apt-get update -y 
+RUN apt-get upgrade -y   
+RUN mkdir /home/download  
+RUN mkdir /home/uploa  
 
 dopodichè bisogna attaccarsi al container in esecuzione, installare openjdk e poi creare un immagine dal container
 facciamo partire il container: docker run -it --name base base_ubuntu
@@ -58,9 +58,9 @@ con il Dockerifle sottostante creiamo l'immagine del container che ci interessa:
 progetto.jar è il file ottentuto dopo il comando "mvn clean package" nella cartella target del progetto spring boot.
 
 
-FROM parte_base_openjdk
-COPY progetto.jar /
-CMD ["java","-jar","progetto.jar"]
+FROM parte_base_openjdk   
+COPY progetto.jar /  
+CMD ["java","-jar","progetto.jar"]     
 
 infine eseguiamo
 docker run -it --rm -p 8080:8080  \
