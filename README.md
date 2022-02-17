@@ -104,6 +104,7 @@ mariadb
 
 #esecuzione sul mio pc dei container spring boot
 #parte1
+
 docker run -it --rm -p 8080:8080 \
 --mount type=bind,src=/home/stefano/Scrivania/"progetto I.dei.S.D"/rabbitmp/container2/parte1/home,dst=/home/download \ 
 -e CUSTOM_MITTENTE=partecipante1 \
@@ -113,7 +114,8 @@ docker run -it --rm -p 8080:8080 \
 --name parte1 container_spring_boot
 
 
-#parte2 
+#parte2
+
 docker run -it --rm -p 8081:8080 \
 --mount type=bind,src=/home/stefano/Scrivania/"progetto I.dei.S.D"/rabbitmp/container2/parte2/home,dst=/home/download \  
 -e CUSTOM_MITTENTE=partecipante2 \
