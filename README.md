@@ -46,7 +46,7 @@ FROM ubuntu:latest
 RUN apt-get update -y 
 RUN apt-get upgrade -y   
 RUN mkdir /home/download  
-RUN mkdir /home/uploa  
+RUN mkdir /home/upload  
 
 dopodichè bisogna attaccarsi al container in esecuzione, installare openjdk e poi creare un immagine dal container
 facciamo partire il container: docker run -it --name base base_ubuntu
@@ -105,7 +105,7 @@ mariadb
 #esecuzione sul mio pc dei container spring boot
 #parte1
 docker run -it --rm -p 8080:8080 \
---mount type=bind,src=/home/stefano/Scrivania/"progetto I.dei.S.D"/rabbitmp/container2/parte1/home,dst=/home/download 
+--mount type=bind,src=/home/stefano/Scrivania/"progetto I.dei.S.D"/rabbitmp/container2/parte1/home,dst=/home/download \ 
 -e CUSTOM_MITTENTE=partecipante1 \
 -e CUSTOM_DESTINATARIO=partecipante2 \
 -e CODA_PRODUTTORE=coda1 \
@@ -115,7 +115,7 @@ docker run -it --rm -p 8080:8080 \
 
 #parte2
 docker run -it --rm -p 8081:8080 \
---mount type=bind,src=/home/stefano/Scrivania/"progetto I.dei.S.D"/rabbitmp/container2/parte2/home,dst=/home/download \
+--mount type=bind,src=/home/stefano/Scrivania/"progetto I.dei.S.D"/rabbitmp/container2/parte2/home,dst=/home/download \  
 -e CUSTOM_MITTENTE=partecipante2 \
 -e CUSTOM_DESTINATARIO=partecipante1 \
 -e CODA_PRODUTTORE=coda2 \
