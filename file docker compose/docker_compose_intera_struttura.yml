@@ -1,0 +1,55 @@
+version: '3'  # requires Docker Compose 1.13 or later
+
+services:
+  rabbitmq:
+    image: 'rabbitmq:management-alpine'
+    ports:
+      - '5672:5672'     # The standard AMQP protocol port
+      - '15672:15672'   # HTTP management UI (guest:guest)
+
+  mariadb:
+    image: mariadb:latest
+    ports:
+      - "4002:3306"
+    volumes:
+      - db-data:/var/lib/mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=chat
+      - MYSQL_USER=stefano
+      - MYSQL_PASSWORD=ste
+
+  parte1:
+    image: container_spring_boot3:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - download-parte1:/home
+    environment:
+      - CUSTOM_MITTENTE=partecipante1
+      - CUSTOM_DESTINATARIO=partecipante2
+      - CODA_PRODUTTORE=coda1
+      - CODA_CONSUMATORE=coda2 
+    depends_on:
+      - "mariadb"
+      - "rabbitmq"
+
+  parte2:
+    image: container_spring_boot3:latest
+    ports:
+      - "8081:8080"
+    volumes:
+      - download-parte2:/home
+    environment:
+      - CUSTOM_MITTENTE=partecipante2
+      - CUSTOM_DESTINATARIO=partecipante1
+      - CODA_PRODUTTORE=coda2
+      - CODA_CONSUMATORE=coda1
+    depends_on:
+      - "mariadb"
+      - "rabbitmq"
+
+volumes:
+  db-data:
+  download-parte1:
+  download-parte2:
