@@ -17,6 +17,8 @@ Questa è l'interfaccia che permette di fornire thymeleaf, un'interfaccia abbast
 
 Questa è la struttura dell'app creata con spring tool suite 4
 
+### Far partire il progetto
+Per far partire il progetto creare i container di base come descritto nella relazione, andare nella cartella "file docker compose" e lanciare docker-compose -f docker_compose_intera_struttura.yml 
 
 
 
