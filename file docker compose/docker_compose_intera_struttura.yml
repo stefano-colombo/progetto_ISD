@@ -20,7 +20,7 @@ services:
       - MYSQL_PASSWORD=ste
 
   parte1:
-    image: container_spring_boot3:latest
+    image: container_spring_boot:latest
     ports:
       - "8080:8080"
     volumes:
@@ -35,7 +35,7 @@ services:
       - "rabbitmq"
 
   parte2:
-    image: container_spring_boot3:latest
+    image: container_spring_boot:latest
     ports:
       - "8081:8080"
     volumes:
